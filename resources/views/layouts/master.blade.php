@@ -7,20 +7,34 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title')</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
+@include('layouts.inc.admin-navbar')
+
+ <div id="layoutSidenav">
+     @include('layouts.inc.admin-sidebar')
+     <div id="layoutSidenav_content">
+        <main>
+            @yield('content')
+        </main>
+        @include('layouts.inc.admin-sidebar-footer')
+     </div>
+
+ </div>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" ></script>
+    <script src="{{ asset('assets/js/scripts.js') }}" ></script>
 
 
 </body>
