@@ -9,6 +9,15 @@
     <h4 class="">Add category</h4>
 <div class="card-body">
 
+    @if ($error->any())
+
+        @foreach ($errors->all() as $error )
+            <div>{{$error}}</div>
+
+        @endforeach
+
+    @endif
+
     <form action="{{url('admin/add-category')}}" method="POST" enctype="multipart/form-data">
         @csrf
 

@@ -16,6 +16,7 @@ class category extends Model
         'description',
         'image',
         'meta_title',
+        'meta_description',
         'meta_keyword',
         'navbar_status',
         'status',

@@ -22,6 +22,8 @@ class CreateCategoriesTable extends Migration
 
             $table->string('image');
             $table->text('meta_title');
+            $table->mediumtext('meta_description');
+
             $table->text('meta_keyword');
             $table->tinyInteger('navbar_status')->default('0');
             $table->tinyInteger('status')->default('0');
