@@ -7,7 +7,7 @@
     <div class="card mt-4">
     <div class="card-header">
     <h4 class="">Add category</h4>
-<div class="card-body">
+<div class="card-body ">
 
     @if ($errors->any())
 

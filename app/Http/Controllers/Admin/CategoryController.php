@@ -60,7 +60,7 @@ class CategoryController extends Controller
         $category->meta_description= $data['meta_description'];
         $category->meta_keyword = $data['meta_keyword'];
         $category->navbar_status= $request->navbar_status==true?'1':'0';
-        $category->navbar_status= $request->navbar_status==true?'1':'0';
+        $category->status= $request->status==true?'1':'0';
 
 
         $category->created_by=Auth::user()->id;
@@ -120,7 +120,7 @@ class CategoryController extends Controller
         $category->meta_description= $data['meta_description'];
         $category->meta_keyword = $data['meta_keyword'];
         $category->navbar_status= $request->navbar_status==true?'1':'0';
-        $category->navbar_status= $request->navbar_status==true?'1':'0';
+        $category->status= $request->status==true?'1':'0';
 
 
         $category->created_by=Auth::user()->id;
@@ -134,6 +134,11 @@ class CategoryController extends Controller
             public function destroy($category_id)
             {
                 $category= Category::find($category_id);
+                $destination ='uploads/category/'.$category->image;
+
+                if(File::exists($destination)){
+                    File::delete($destination);
+                }
                 if($category){
                     $category->delete();
                     return redirect ('admin/category')->with('massage','category deleted successfully');
