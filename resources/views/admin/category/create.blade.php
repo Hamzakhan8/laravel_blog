@@ -9,7 +9,7 @@
     <h4 class="">Add category</h4>
 <div class="card-body">
 
-    @if ($error->any())
+    @if ($errors->any())
 
         @foreach ($errors->all() as $error )
             <div>{{$error}}</div>

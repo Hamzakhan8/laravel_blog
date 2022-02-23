@@ -4,19 +4,53 @@
 
 @section('content')
 <div class="container-fluid px-4">
-    <h1 class="mt-4">category</h1>
-    @if (session('massage'))
+    <div class="card">
+        .<div class="card">
+            <div class="card-header">
+                <h4>View Category <a href="{{url('admin/add-category')}} " class="btn btn-primary btn-sm float-end">Add category</a></h4>
+            </div>
+            <div class="card-body">
+                @if (session('massage'))
 
-        <div class="alert alert-success">{{session('massage')}}</div>
+                <div class="alert alert-success">{{session('massage')}}</div>
 
-    @endif
-    <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item active">category</li>
-    </ol>
+            @endif
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>category Name</th>
+                        <th>Image</th>
+                        <th>Status</th>
+                        <th>Edit</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach ($category as $items)
+                    <tr>
+                        <td scope="row">{{$items->id}}</td>
+                        <td>{{$items->name}}</td>
+                        <td><img src="{{asset('uploads/category/'.$items->image)}}" width="50px" height="50px" alt="img"></td>
+                        <td>{{$items->status == '1' ? 'hidden':'show'}}</td>
+                        <td>
+                            <a href="" class="btn btn-success">Edit </a>
+                        </td>
+
+                    </tr>
+                    @endforeach
+
+
+                </tbody>
+            </table>
+            </div>
+
+        </div>
+    </div>
+
 
     </div>
-    <div class="row">
 
-
-    </div>
 @endsection
