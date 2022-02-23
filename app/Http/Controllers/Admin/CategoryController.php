@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Http\Requests\admin\CategoryFormRequest;
 use App\Models\Category;
-
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+
+use App\Http\Requests\admin\CategoryFormRequest;
 
 class CategoryController extends Controller
 {
@@ -82,6 +83,7 @@ class CategoryController extends Controller
 
                 $data= $request->validated();
 
+
                 $category=Category::find($category_id);
 
                 $category->name = $data['name'];
@@ -89,8 +91,17 @@ class CategoryController extends Controller
                 $category->description = $data['description'];
 
 
-                if($request->hasfile('image'))
-    {
+
+
+
+                if($request->hasfile('image')) {
+
+                $destination ='uploads/category/'.$category->image;
+
+                if(File::exists($destination)){
+                    File::delete($destination);
+                }
+
 
         $file=$request->file('image');
         $filename=time(). '.' . $file->getClientOriginalExtension();
@@ -120,8 +131,18 @@ class CategoryController extends Controller
             }
 
 
+            public function destroy($category_id)
+            {
+                $category= Category::find($category_id);
+                if($category){
+                    $category->delete();
+                    return redirect ('admin/category')->with('massage','category deleted successfully');
 
-
+                }
+                else{
+                    return redirect ('admin/category')->with('massage','no category found');
+                }
+            }
 
 
 
