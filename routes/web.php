@@ -1,8 +1,9 @@
 <?php
-
-use App\Models\category;
+use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 
@@ -32,6 +33,10 @@ Route::post('add-category',[App\Http\Controllers\Admin\CategoryController::class
 Route::get('edit-category/{category_id}',[App\Http\Controllers\Admin\CategoryController::class,'edit']);
 Route::put('update-category/{category_id}',[App\Http\Controllers\Admin\CategoryController::class,'update']);
 Route::get('delete-category/{category_id}',[App\Http\Controllers\Admin\CategoryController::class,'destroy']);
+
+Route::get('post',[App\Http\Controllers\Admin\PostController::class,'index']);
+Route::get('add-post',[App\Http\Controllers\Admin\PostController::class,'create']);
+Route::post('add-post',[App\Http\Controllers\Admin\PostController::class,'store']);
 
 
 
