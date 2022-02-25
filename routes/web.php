@@ -43,6 +43,8 @@ Route::get('delete-post/{post_id}',[App\Http\Controllers\Admin\PostController::c
 
 Route::get('user',[App\Http\Controllers\Admin\UserController::class,'index']);
 Route::get('edit-user/{user_id}',[App\Http\Controllers\Admin\UserController::class,'edit']);
+Route::put('update-user/{user_id}',[App\Http\Controllers\Admin\UserController::class,'update']);
+
 
 
 

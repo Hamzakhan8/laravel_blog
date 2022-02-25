@@ -7,7 +7,7 @@
     <div class="card">
         .<div class="card">
             <div class="card-header">
-                <h4>View Users<a href="{{url('admin/add-post')}} " class="btn btn-primary btn-sm float-end">Add Post</a></h4>
+                <h4>View Users<a href="{{url('admin/user')}} " class="btn btn-primary btn-sm float-end">Back</a></h4>
             </div>
             <div class="card-body">
                 @if (session('massage'))
@@ -16,7 +16,7 @@
 
             @endif
 
-            <table class="table table-bordered">
+            <table id="myTable" class="table table-bordered" >
                 <thead>
                     <tr>
                         <th>ID</th>

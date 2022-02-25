@@ -12,7 +12,9 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css"/>
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
 
     <!-- Styles -->
     <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet">
@@ -20,7 +22,8 @@
        <!-- summer note css link -->
      <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
      <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-</head>
+
+    </head>
 <body>
 
 @include('layouts.inc.admin-navbar')
@@ -37,18 +40,25 @@
  </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-
+<!-- javascript link-->
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" ></script>
     <script src="{{ asset('assets/js/scripts.js') }}" ></script>
- <!-- summer note css link-->
+ <!-- summer note js link-->
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
     <script>
         $(document).ready(function() {
             $("#mysummernote").summernote();
             $('.dropdown-toggle').dropdown();
         });
+
     </script>
 
-
+<script src="//cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+<script>
+         $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
 </body>
 </html>

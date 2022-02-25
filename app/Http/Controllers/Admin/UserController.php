@@ -23,5 +23,19 @@ class UserController extends Controller
 
    }
 
+   public function update(Request $request,$user_id ){
+
+
+    $users = User::find($user_id);
+
+        $users->role_as=$request->role_as;
+        $users->update();
+        return redirect('admin/user')->with('massage','updated successful');
+
+
+
+
+
+   }
 
 }
