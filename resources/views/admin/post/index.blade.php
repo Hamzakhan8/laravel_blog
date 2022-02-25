@@ -32,7 +32,7 @@
 
                     <tbody>
 
-                        @foreach ($posts as $items)
+                        @foreach ($post as $items)
                         <tr>
                             <td scope="row">{{$items->id}}</td>
                             <td>{{$items->category->name}}</td>

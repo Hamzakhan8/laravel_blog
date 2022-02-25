@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\Auth;
 class PostController extends Controller
 {
     public function index()
-    {   $posts=  Post::all();
-        return view('admin.post.index',compact('posts'));
+    {   $post=  Post::all();
+        return view('admin.post.index',compact('post'));
     }
 
     /**
@@ -67,22 +67,21 @@ class PostController extends Controller
     public function update(PostFormRequest $request,$post_id){
         $data=$request->validated();
         $post= Post :: find($post_id);
-        $post= new Post;
+
         $post->category_id=$data['category_id'];
+        $post->name = $data['name'];
+        $post->slug = $data['slug'];
+        $post->description = $data['description'];
 
-        $post->name=$data['name'];
-        $post->slug=$data['slug'];
 
-        $post->description=$data['description'];
+        $post->meta_title = $data['meta_title'];
+        $post->meta_description= $data['meta_description'];
+        $post->meta_keyword = $data['meta_keyword'];
 
-        $post->yt_iframe=$data['yt_iframe'];
-        $post->meta_title=$data['meta_title'];
+        $post->status= $request->status==true?'1':'0';
 
-        $post->meta_description=$data['meta_description'];
-        $post->meta_keyword=$data['meta_keyword'];
 
-        $post->status=$request->status==true?'1':'0';
-        $post->created_by = Auth::user()->id;
+        $post->created_by=Auth::user()->id;
         $post->update();
 
          return  redirect('admin/post')->with('massage','post updated successfully');

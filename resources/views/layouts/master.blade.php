@@ -17,7 +17,9 @@
     <!-- Styles -->
     <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet">
      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
-
+       <!-- summer note css link -->
+     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -33,8 +35,19 @@
      </div>
 
  </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" ></script>
     <script src="{{ asset('assets/js/scripts.js') }}" ></script>
+ <!-- summer note css link-->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#mysummernote").summernote();
+            $('.dropdown-toggle').dropdown();
+        });
+    </script>
 
 
 </body>

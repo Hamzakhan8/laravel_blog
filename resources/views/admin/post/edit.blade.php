@@ -26,7 +26,7 @@
             <label for="">Category </label>
             <select name="category_id"  class="form-control">
                 @foreach ($category as $catitem)
-                <option value="{{$catitem->id}}">{{$catitem->name}}</option>
+                <option value="{{$catitem->id}}" {{$post->category_id==$catitem->id?'selected':''}}>{{$catitem->name}}</option>
 
                 @endforeach
             </select>
@@ -43,7 +43,7 @@
 
             <div class="mb-3">
                 <label for="">Description</label>
-                <textarea name="description"  rows="5" class="form-control">{{$post->description}}</textarea>
+                <textarea name="description"  id="mysummernote" rows="5" class="form-control">{!!$post->description!!}</textarea>
             </div>
 
             <div class="mb-3">
@@ -58,12 +58,12 @@
             </div>
             <div class="mb-3">
                 <label for="">meta description</label>
-                <textarea name="meta_description"  rows="5" class="form-control">{{$post->meta_description}}</textarea>
+                <textarea name="meta_description"  rows="5" class="form-control">{!!$post->meta_description!!}</textarea>
 
             </div>
             <div class="mb-3">
                 <label for="">meta keyword</label>
-                <textarea name="meta_keyword" rows="5" class="form-control">{{$post->meta_keyword}}</textarea>
+                <textarea name="meta_keyword" rows="5" class="form-control">{!!$post->meta_keyword!!}}</textarea>
 
             </div>
 
