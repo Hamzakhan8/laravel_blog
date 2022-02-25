@@ -37,6 +37,9 @@ Route::get('delete-category/{category_id}',[App\Http\Controllers\Admin\CategoryC
 Route::get('post',[App\Http\Controllers\Admin\PostController::class,'index']);
 Route::get('add-post',[App\Http\Controllers\Admin\PostController::class,'create']);
 Route::post('add-post',[App\Http\Controllers\Admin\PostController::class,'store']);
+Route::put('edit-post',[App\Http\Controllers\Admin\PostController::class,'store']);
+
+
 
 
 

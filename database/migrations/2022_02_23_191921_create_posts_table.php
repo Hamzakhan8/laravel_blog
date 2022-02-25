@@ -20,14 +20,14 @@ class CreatePostsTable extends Migration
             $table->string('slug');
             $table->mediumText('description');
 
-            $table->string('yt_iframe');
+            $table->string('yt_iframe')->nullable();
 
             $table->text('meta_title');
-            $table->mediumtext('meta_description');
-            $table->text('meta_keyword');
+            $table->mediumtext('meta_description')->nullable();
+            $table->text('meta_keyword')->nullable();
 
             $table->tinyInteger('status')->default('0');
-            $table->Integer('created_by')->defaul('0');
+            $table->Integer('created_by');
 
             $table->timestamps();
 

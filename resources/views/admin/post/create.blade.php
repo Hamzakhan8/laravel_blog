@@ -10,11 +10,12 @@
 <div class="card-body ">
 
     @if ($errors->any())
-
-        @foreach ($errors->all() as $error )
+                <div class="alert alert-danger" >
+            @foreach ($errors->all() as $error )
             <div>{{$error}}</div>
 
         @endforeach
+    </div>
 
     @endif
 
@@ -23,7 +24,7 @@
 
             <div class="mb-3">
                 <label for="">Category </label>
-                <select name="" row="3" class="form-control">
+                <select name="category_id"  class="form-control">
                     @foreach ($category as $catitem)
                     <option value="{{$catitem->id}}">{{$catitem->name}}</option>
 

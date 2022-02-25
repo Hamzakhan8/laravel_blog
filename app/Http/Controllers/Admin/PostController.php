@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\Auth;
 class PostController extends Controller
 {
     public function index()
-    {
-        return view('admin.post.index');
+    {   $posts=  Post::all();
+        return view('admin.post.index',compact('posts'));
     }
 
     /**

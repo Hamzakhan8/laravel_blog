@@ -7,7 +7,7 @@
     <div class="card">
         .<div class="card">
             <div class="card-header">
-                <h4>View POST<a href="{{url('admin/add-category')}} " class="btn btn-primary btn-sm float-end">Add category</a></h4>
+                <h4>View POST<a href="{{url('admin/add-post')}} " class="btn btn-primary btn-sm float-end">Add Post</a></h4>
             </div>
             <div class="card-body">
                 @if (session('massage'))
@@ -20,8 +20,8 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>category Name</th>
-                        <th>Image</th>
+                        <th>category </th>
+                        <th>post name</th>
                         <th>Status</th>
                         <th>Edit</th>
                         <th>delete</th>
@@ -29,10 +29,31 @@
 
                     </tr>
                 </thead>
-                <tbody>
+
+                    <tbody>
+
+                        @foreach ($posts as $items)
+                        <tr>
+                            <td scope="row">{{$items->id}}</td>
+                            <td>{{$items->category->name}}</td>
+                            <td>{{$items->name}}</td>
 
 
-                </tbody>
+
+                            <td>{{$items->status == '1' ? 'hidden':'show'}}</td>
+                            <td>
+                                <a href="{{url('admin/edit-post/'.$items->id)}}" class="btn btn-success">Edit </a>
+                            </td>
+                            <td>
+                                <a href="{{url('admin/delete-post/'.$items->id)}}" class="btn btn-danger">delete </a>
+                            </td>
+
+                        </tr>
+                        @endforeach
+
+
+                    </tbody>
+
             </table>
             </div>
 
