@@ -54,4 +54,10 @@ class PostController extends Controller
         return  redirect('admin/post')->with('massage','post added successfully');
 
     }
+
+    public function edit(){
+
+
+
+    }
 }
