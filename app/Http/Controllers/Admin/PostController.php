@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Post;
 use App\Models\Category;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\PostFormRequest;
@@ -37,7 +38,7 @@ class PostController extends Controller
        $post->category_id=$data['category_id'];
 
        $post->name=$data['name'];
-       $post->slug=$data['slug'];
+       $post->slug=Str::slug($data['slug']);
 
        $post->description=$data['description'];
 
@@ -70,7 +71,7 @@ class PostController extends Controller
 
         $post->category_id=$data['category_id'];
         $post->name = $data['name'];
-        $post->slug = $data['slug'];
+        $post->slug = Str::slug($data['slug']);
         $post->description = $data['description'];
 
 

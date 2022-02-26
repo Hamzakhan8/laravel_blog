@@ -3,7 +3,7 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">Core</div>
-                <a class="nav-link" href="{{url('admin/dashboard')}}">
+                <a class="nav-link {{Request::is('admin/dashboard')? 'active':'' }}" href="{{url('admin/dashboard')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
@@ -30,8 +30,8 @@
                         <a class="nav-link" href="{{url('admin/post')}}">View post</a>
                     </nav>
                 </div>
-                <a class="nav-link" href="{{url('admin/user')}}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                <a class="nav-link {{Request::is('admin/user')? 'active':'' }}" href="{{url('admin/user')}}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                    Users
                 </a>
 
