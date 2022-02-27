@@ -75,6 +75,7 @@
             </div>
         </nav>
 
+        @include('layouts.inc.frontend-navbar')
         <main class="py-4">
             @yield('content')
         </main>

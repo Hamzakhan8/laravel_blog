@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[App\Http\Controllers\Fronend\FrontEndController::class,'index']);
+Route::get('tutorial/{category_slug}',[App\Http\Controllers\Fronend\FrontEndController::class,'ViewCategoryPost']);
 
 
 
