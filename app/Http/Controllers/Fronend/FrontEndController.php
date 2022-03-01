@@ -13,14 +13,33 @@ class FrontEndController extends Controller
         return view('frontend.index');
     }
 
-    public function ViewCategoryPost($category_slug){
+    public function ViewCategoryPost(string $category_slug){
 
         $category= Category::where('slug',$category_slug)->where('status','0')->first();
 
         if($category){
 
-            $post=Post::where('category_id',$category->id)->where('status','0')->paginate(2);
+            $post=Post::where('category_id',$category->id)->where('status','0')->paginate(10);
             return view('frontend.post.index',compact('post','category'));
+
+        }
+
+        else{
+            return view('/');
+        }
+
+
+
+
+    }
+    public function viewpost(string $category_slug,string $post_slug ){
+
+        $category= Category::where('slug',$category_slug)->where('status','0')->first();
+
+        if($category){
+
+            $post=Post::where('category_id',$category->id)->where('slug',$post_slug)->where('status','0')->first();
+            return view('frontend.post.view',compact('post'));
 
         }
 

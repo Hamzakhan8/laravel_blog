@@ -1,5 +1,11 @@
 @extends('layouts.app')
 @section('content')
+@section('title' , "$category->meta_title")
+@section('meta_description', "$category->meta_description")
+@section('meta_keyword',"$category->meta_keyword")
+
+
+
 
 
 <div class="py-4">
@@ -13,6 +19,7 @@
                     </div>
                     @forelse ($post as $postitem)
                     <div class="card card-shadow mt-4">
+                    <div class="card-body">
                     <a href="{{url('tutorial/'.$category->slug.'/'.$postitem->slug)}}" class="text-decoration-none">
                         <h2 class="post-heading">{{$postitem->name}}</h2>
                     </a>
@@ -24,7 +31,7 @@
 
                     </div>
 
-
+                </div>
                     @empty
                     <div class="card card-shadow mt-4">
                         <h2 class="">no Post Aailable </h2>
