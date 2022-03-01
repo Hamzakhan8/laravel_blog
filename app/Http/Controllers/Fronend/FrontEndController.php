@@ -19,7 +19,7 @@ class FrontEndController extends Controller
 
         if($category){
 
-            $post=Post::where('category_id',$category->id)->where('status','0')->get();
+            $post=Post::where('category_id',$category->id)->where('status','0')->paginate(2);
             return view('frontend.post.index',compact('post','category'));
 
         }
