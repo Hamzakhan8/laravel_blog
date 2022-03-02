@@ -29,7 +29,92 @@
         </div>
     </div>
 </div>
+<div class="py-1 bg-light">
+
+    <div class="container border">
+        <div class="row">
+            <div class="col-md-12">
+                    <h4>ADVERTISING AREA</h4>
+                    <div class="underline">  </div>
 
 
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="py-5">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                    <h4>Funda of Web it</h4>
+                    <div class="underline">  </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem illum, assumenda vitae quas labore eos eveniet voluptas aperiam nam optio atque possimus quaerat quis sunt facilis quod iusto ipsa laudantium!
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus ut debitis iure, corrupti hic tempore beatae. Quidem at expedita quibusdam molestias quam sunt sit. Quia sit odit cum nostrum recusandae?
+                        </p>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="py-5">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                    <h4>All Categories List</h4>
+                    <div class="underline">  </div>
+
+
+
+            </div>
+
+            @foreach ($category_all as $allcat_item )
+
+            <div class="col-md-3">
+
+                    <div class="card card-body mb-3">
+                        <a href="{{url('tutorial/'.$allcat_item->slug)}}" class="text-decoration-none">
+                      </h5 class="text-dark mb-0">{{$allcat_item->name}}</h5></a>
+                    </div>
+            </div>
+
+            @endforeach
+        </div>
+    </div>
+
+</div>
+<div class="py-5">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                    <h4>Latest Post</h4>
+                    <div class="underline">  </div>
+
+
+
+            </div>
+
+            @foreach ($latest_posts as $latest_post_item )
+
+            <div class="col-md-3">
+
+                    <div class="card card-body mb-3">
+                        <a href="{{url('tutorial/'.$latest_post_item->category->slug)}}" class="text-decoration-none">
+                      </h5 class="text-dark mb-0">{{$latest_post_item->name}}</h5></a>
+                      <h6>Posted on : {{$latest_post_item->created_at->format('d-m-Y')}}</h6>
+                    </div>
+            </div>
+
+            @endforeach
+        </div>
+    </div>
+
+</div>
 
 @endsection
