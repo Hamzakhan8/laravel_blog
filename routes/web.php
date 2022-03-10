@@ -21,7 +21,7 @@ Route::get('tutorial/{category_slug}',[App\Http\Controllers\Fronend\FrontEndCont
 Route::get('/tutorial/{category_slug}/{post_slug}',[App\Http\Controllers\Fronend\FrontEndController::class,'ViewPost']);
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\Fronend\FrontEndController::class,'index']);
 
 Route::prefix('admin')->middleware('auth','isAdmin')->group(function () {
 

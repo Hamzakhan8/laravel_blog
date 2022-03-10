@@ -33,7 +33,7 @@ class CategoryController extends Controller
 
    }
     public function store(CategoryFormRequest $request){
-                
+
 
                 $data= $request->validated();
 
@@ -100,7 +100,7 @@ class CategoryController extends Controller
 
                 if($request->hasfile('image')) {
 
-                $destination ='uploads/category/'.$category->image;
+                $destination ='uploads/category/'.$category->image ;
 
                 if(File::exists($destination)){
                     File::delete($destination);

@@ -100,18 +100,19 @@
 
             </div>
 
-            @foreach ($latest_posts as $latest_post_item )
+           @foreach ($latest_posts as $latest_posts_item )
 
             <div class="col-md-3">
-
+{{--
                     <div class="card card-body mb-3">
-                        <a href="{{url('tutorial/'.$latest_post_item->category->slug)}}" class="text-decoration-none">
-                      </h5 class="text-dark mb-0">{{$latest_post_item->name}}</h5></a>
+                        <a href="{{url('tutorial/'. $latest_posts_item->category->slug.'/'.$latest_posts_item->slug)}}" class="text-decoration-none">
+                      </h5 class="text-dark mb-0">{{$latest_posts_item->name}}</h5></a>
                       <h6>Posted on : {{$latest_post_item->created_at->format('d-m-Y')}}</h6>
-                    </div>
+                    </div>--}}
             </div>
 
             @endforeach
+
         </div>
     </div>
 
