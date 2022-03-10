@@ -14,7 +14,7 @@
 
                 <div class="alert alert-success">{{session('massage')}}</div>
 
-            @endif
+                @endif
 
             <table id="myTable" class="table table-bordered">
                 <thead>

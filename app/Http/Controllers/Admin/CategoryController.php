@@ -32,7 +32,9 @@ class CategoryController extends Controller
 
 
    }
-            public function store(CategoryFormRequest $request){
+    public function store(CategoryFormRequest $request){
+                
+
                 $data= $request->validated();
 
                 $category= new Category;
