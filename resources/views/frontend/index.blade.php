@@ -48,7 +48,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                    <h4>Funda of Web it</h4>
+                    <h4>Zalmi Coding</h4>
                     <div class="underline">  </div>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem illum, assumenda vitae quas labore eos eveniet voluptas aperiam nam optio atque possimus quaerat quis sunt facilis quod iusto ipsa laudantium!
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus ut debitis iure, corrupti hic tempore beatae. Quidem at expedita quibusdam molestias quam sunt sit. Quia sit odit cum nostrum recusandae?
