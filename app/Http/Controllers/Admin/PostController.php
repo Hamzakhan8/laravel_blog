@@ -14,7 +14,8 @@ class PostController extends Controller
 {
     public function index()
     {   $post=  Post::all();
-        return view('admin.post.index',compact('post'));
+        $category= Category::all();
+        return view('admin.post.index',compact('post','category'));
     }
 
     /**
@@ -58,7 +59,7 @@ class PostController extends Controller
 
     public function edit($post_id)
     {
-        $category= Category::where('status','0')->get();
+        $category=Category::where('status','0')->get();
         $post= Post :: find($post_id);
         return view("admin.post.edit",compact('post','category'));
 

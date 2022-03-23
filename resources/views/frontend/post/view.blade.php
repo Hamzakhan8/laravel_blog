@@ -38,10 +38,11 @@
                         </div>
 
                      <div class="card mt-3">
+                         <h3>Latest Post</h3>
                          @foreach ($latestpost as $latest_item )
 
                             <a href="{{url('tutorial/'.$latest_item->category->slug.'/'.$latest_item->slug)}}" class="text-decoration-none">
-                                <h6>>{{$latest_item->name}}</h6>
+                                <h6>{{$latest_item->name}}</h6>
                             </a>
 
 
