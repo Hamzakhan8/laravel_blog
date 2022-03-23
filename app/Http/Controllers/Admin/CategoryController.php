@@ -144,6 +144,8 @@ class CategoryController extends Controller
                     File::delete($destination);
                 }
                 if($category){
+
+                    $category->posts()->delete();
                     $category->delete();
                     return redirect ('admin/category')->with('massage','category deleted successfully');
 
