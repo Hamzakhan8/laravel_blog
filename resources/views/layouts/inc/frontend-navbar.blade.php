@@ -2,7 +2,7 @@
 
     <div class="container">
         <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3 d-none d-sm-none d-md-inline">
                     <img src="{{asset('assets/images/logo.png') }}" alt="logo" style="width:134px;height=50px;">
                 </div>
                 <div class="col-md-9 my-auto">
@@ -10,9 +10,14 @@
                 </div>
         </div>
     </div>
+</div>
+<div class="sticky-top">
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-
+            <a href="{{url('/')}}" class="navbar-brand d-inline d-sm-inline d-md-none">
+            <img src="{{asset('assets/images/logo.png') }}" alt="logo" style="width:80px;height=50px;">
+            </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -85,5 +90,6 @@
             </ul>
           </div>
         </div>
-      </nav>
+    </nav>
+
 </div>

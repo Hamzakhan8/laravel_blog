@@ -15,7 +15,7 @@
                 <div class="alert alert-success">{{session('massage')}}</div>
 
             @endif
-
+        <div class="table-responsive">
             <table id="myTable" class="table table-bordered">
                 <thead>
                     <tr>
@@ -55,6 +55,7 @@
                     </tbody>
 
             </table>
+        </div>
             </div>
 
         </div>
