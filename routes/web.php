@@ -23,6 +23,10 @@ Route::get('/tutorial/{category_slug}/{post_slug}',[App\Http\Controllers\Fronend
 
 Route::get('/home', [App\Http\Controllers\Fronend\FrontEndController::class,'index']);
 
+// comment system
+Route::post('/home', [App\Http\Controllers\Fronend\CommnetController::class,'store']);
+
+
 Route::prefix('admin')->middleware('auth','isAdmin')->group(function () {
 
 Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
