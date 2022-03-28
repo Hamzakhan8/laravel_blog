@@ -31,9 +31,9 @@
 
                                <h6  class="card-title"> Leave a comment </h6>
                                <form action="{{url('comments')}}" method="POST">
-
+                                    @csrf
                                     <input type="hidden" name="post_slug" value="{{$post->slug}}">
-                                   <textarea required name="" class="form-control" id="" cols="30" rows="10">
+                                   <textarea required name="comment_body" class="form-control" id="" cols="30" rows="10">
 
                                    </textarea>
                                    <button type="submit" class="btn btn-warning my-3">Submit</button>
