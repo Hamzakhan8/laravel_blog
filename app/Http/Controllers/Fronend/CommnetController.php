@@ -40,12 +40,12 @@ class CommnetController extends Controller
 
         }
         else{
-
+            return redirect()->back()->with('massage','No such Post Found ');
         }
     }
     else{
 
-        redirect()->back()->with('massage','Login First to Comment');
+        return redirect()->back()->with('massage','Login First to Comment');
     }
 
   }
