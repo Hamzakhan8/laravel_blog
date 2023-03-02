@@ -56,6 +56,9 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ms-auto">
                 <!-- Authentication Links -->
+                @auth
+                    <a href="{{route('dashboard')}}" class="btn btn-success">dashboard</a>
+                @endauth
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-item">

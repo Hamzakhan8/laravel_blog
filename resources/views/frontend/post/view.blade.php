@@ -20,7 +20,7 @@
                         </div>
                     <div class="card card-shadow mt-4">
                         <div class="card-body post-description">
-                            {!!$post->description  !!}
+                            {!!$post->description!!}
                         </div>
                     </div>
 

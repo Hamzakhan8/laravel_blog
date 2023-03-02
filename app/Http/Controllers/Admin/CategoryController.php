@@ -20,6 +20,7 @@ class CategoryController extends Controller
    {
 
     $category=Category::all();
+    dd($category);
 
     return view('admin.category.index', compact('category'));
    }
